@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  background: white
+}
+
+
+
+
+.correct-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+button {
+  background-color:#080839 ;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5em;
+  letter-spacing: 0.21px;
+  line-height: 16px;
+  max-width: 255px;
+  padding: 20px 52px;
+  text-align: center;
+  transition-duration: 0.15s;
+  transition-property: background-color;
+  transition-timing-function: linear;
+  margin-top: 0.6em;
+}
+
+header {
+  padding: 40px;
+  text-align: center;
+  background: white;
+  color: black;
+  border-bottom:30px;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+section {
+  flex: 0 auto;                            
+  padding: 8px;
+  margin-top: 50px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.timer {
+  position:absolute;
+  top:5px;
+  right:10px;
+  height: 2px;
+  padding: 5px;
+  background: white;
+  color: black;
+  text-align: center;
+}
+
+.choice-button button{
+  background-color: #080839;
+  color: white; 
+  text-align:left;
+  cursor: pointer; 
+  width: 100%; 
+  height: 15px;
+  display: block; 
+  font-size:16px;
+  
+}
+
+
+ .highscores {
+position:absolute;
+top:5px;
+left:5px;
+height: 2px;
+padding: 0px;
+background: white;
+color: black;
+text-align: center;
+}
+
+
+@media screen and (max-width: 1183px) {
+  main {
+    flex-direction: column;
+  }
+
+  .word-guess,
+  .results {
+    width: 90vw;
+  }
+
+  section {
+    background-color: white;
+    margin: 20px auto;
+    width: 92vw;
+  }
+}
+
+@media screen and (max-width: 504px) {
+  .large-font {
+    font-size: 2em;
+  }
+
+  .reset-button {
+    font-size: 12px;
+    width: 20ox;
+    
+  }
+
+  .timer {
+    height: 200px;
+  }
+ 
