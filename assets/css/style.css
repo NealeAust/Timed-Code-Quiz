@@ -12,7 +12,10 @@ body {
   background: white
 }
 
+#question{
 
+  display:none;
+}
 
 
 .correct-container {
