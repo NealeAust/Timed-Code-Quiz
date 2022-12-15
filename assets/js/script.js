@@ -7,8 +7,6 @@ btn.addEventListener("click", function () {
     Questions()
 })
 
-
-
 function Questions() {
     console.log(allQuestions[0])
     console.log(allQuestions[0].question)
@@ -19,159 +17,27 @@ function Questions() {
     button1.textContent = allQuestions[0].choices[0]
     button1.addEventListener("click", function () {
         //check if correct answer 
-        Questions1()
+        //Questions()
     })
     var button2 = document.getElementById("choice2")
     button2.textContent = allQuestions[0].choices[1]
     button2.addEventListener("click", function () {
         //check if correct answer 
-        Questions1()
+        //Questions()
     })
     var button3 = document.getElementById("choice3")
     button3.textContent = allQuestions[0].choices[2]
     button3.addEventListener("click", function () {
         //check if correct answer 
-        Questions1()
+        //Questions()
     })
     var button4 = document.getElementById("choice4")
     button4.textContent = allQuestions[0].choices[3]
     button4.addEventListener("click", function () {
         //check if correct answer 
-        Questions1()
+       // Questions()
     })
 }
-
-function Questions1() {
-    console.log(allQuestions[1])
-    console.log(allQuestions[1].question)
-    var questionel = document.querySelector("h3")
-    questionel.textContent = allQuestions[1].question
-    console.log(allQuestions[1].choices[0])
-    var button1 = document.getElementById("choice1")
-    button1.textContent = allQuestions[1].choices[0]
-    button1.addEventListener("click", function () {
-        //check if correct answer 
-        Questions2()
-    })
-    var button2 = document.getElementById("choice2")
-    button2.textContent = allQuestions[1].choices[1]
-    button2.addEventListener("click", function () {
-        //check if correct answer 
-        Questions2()
-    })
-    var button3 = document.getElementById("choice3")
-    button3.textContent = allQuestions[1].choices[2]
-    button3.addEventListener("click", function () {
-        //check if correct answer 
-        Questions2()
-    })
-    var button4 = document.getElementById("choice4")
-    button4.textContent = allQuestions[1].choices[3]
-    button4.addEventListener("click", function () {
-        //check if correct answer 
-        Questions2()
-    })
-}
-
-function Questions2() {
-    console.log(allQuestions[2])
-    console.log(allQuestions[2].question)
-    var questionel = document.querySelector("h3")
-    questionel.textContent = allQuestions[2].question
-    console.log(allQuestions[2].choices[0])
-    var button1 = document.getElementById("choice1")
-    button1.textContent = allQuestions[2].choices[0]
-    button1.addEventListener("click", function () {
-        //check if correct answer 
-        Questions3()
-    })
-    var button2 = document.getElementById("choice2")
-    button2.textContent = allQuestions[2].choices[1]
-    button2.addEventListener("click", function () {
-        //check if correct answer 
-        Questions3()
-    })
-    var button3 = document.getElementById("choice3")
-    button3.textContent = allQuestions[2].choices[2]
-    button3.addEventListener("click", function () {
-        //check if correct answer 
-        Questions3()
-    })
-    var button4 = document.getElementById("choice4")
-    button4.textContent = allQuestions[2].choices[3]
-    button4.addEventListener("click", function () {
-        //check if correct answer 
-        Questions3()
-    })
-}
-
-function Questions3() {
-    console.log(allQuestions[3])
-    console.log(allQuestions[3].question)
-    var questionel = document.querySelector("h3")
-    questionel.textContent = allQuestions[3].question
-    console.log(allQuestions[3].choices[0])
-    var button1 = document.getElementById("choice1")
-    button1.textContent = allQuestions[3].choices[0]
-    button1.addEventListener("click", function () {
-  
-   
-        Questions4()
-    })
-    var button2 = document.getElementById("choice2")
-    button2.textContent = allQuestions[2].choices[1]
-    button2.addEventListener("click", function () {
-        //check if correct answer 
-        Questions4()
-    })
-    var button3 = document.getElementById("choice3")
-    button3.textContent = allQuestions[2].choices[2]
-    button3.addEventListener("click", function () {
-        //check if correct answer 
-        Questions4()
-    })
-    var button4 = document.getElementById("choice4")
-    button4.textContent = allQuestions[2].choices[3]
-    button4.addEventListener("click", function () {
-        //check if correct answer 
-        Questions4()
-    })
-}
-
-function Questions4() {
-    console.log(allQuestions[4])
-    console.log(allQuestions[4].question)
-    var questionel = document.querySelector("h3")
-    questionel.textContent = allQuestions[4].question
-    console.log(allQuestions[4].choices[0])
-    var button1 = document.getElementById("choice1")
-    button1.textContent = allQuestions[4].choices[0]
-    button1.addEventListener("click", function () {
-   
-        Questions()
-    })
-    var button2 = document.getElementById("choice2")
-    button2.textContent = allQuestions[4].choices[1]
-    button2.addEventListener("click", function () {
-        //check if correct answer 
-        Questions()
-    })
-    var button3 = document.getElementById("choice3")
-    button3.textContent = allQuestions[4].choices[2]
-    button3.addEventListener("click", function () {
-        //check if correct answer 
-        Questions()
-    })
-    var button4 = document.getElementById("choice4")
-    button4.textContent = allQuestions[4].choices[3]
-    button4.addEventListener("click", function () {
-        //check if correct answer 
-        Questions4()
-    })
-}
-
-function gameOver() {}
-    
 
 var allQuestions = [{
     question: 'Commonly used data types DO NOT include:',
@@ -198,13 +64,4 @@ var allQuestions = [{
     choices: ['1. JavaScript', '2. terminal/bash', '3. for loops', '4. console.log'],
     correctAnswer: 4
 }];
-
-//  
- 
-
-
-
-
-
-
 

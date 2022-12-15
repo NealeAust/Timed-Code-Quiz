@@ -13,18 +13,10 @@ body {
 }
 
 #question{
-
-  display:none;
+display:none;
 }
 
-
-.correct-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 16px;
-}
-
-button {
+.start-button {
   background-color:#080839 ;
   border-radius: 8px;
   color: white;
@@ -74,7 +66,18 @@ section {
   text-align: center;
 }
 
-.choice-button button{
+.highscores {
+  position:absolute;
+  top:5px;
+  left:5px;
+  height: 2px;
+  padding: 0px;
+  background: white;
+  color: black;
+  text-align: center;
+  }
+  
+ .choice-button {
   background-color: #080839;
   color: white; 
   text-align:left;
@@ -83,9 +86,35 @@ section {
   height: 15px;
   display: block; 
   font-size:16px;
-  
-}
+ 
+} 
 
+
+
+ /* #choice1 {
+  background-color: #080839;
+  color: white; 
+  text-align:left;
+  cursor: pointer; 
+  padding: 20px 20px;
+  width: 250px; 
+  height: 30px;
+  display: block; 
+  font-size:16px;
+  
+} */
+#choice2 {
+  background-color: #080839;
+  color: white; 
+  text-align:left;
+  cursor: pointer; 
+  padding: 5px 20px;
+  width: 250px; 
+  max-height: 30px;
+  display: block; 
+  font-size:16px;
+  
+}  */
 
  .highscores {
 position:absolute;
@@ -104,11 +133,7 @@ text-align: center;
     flex-direction: column;
   }
 
-  .word-guess,
-  .results {
-    width: 90vw;
-  }
-
+  
   section {
     background-color: white;
     margin: 20px auto;
@@ -121,13 +146,6 @@ text-align: center;
     font-size: 2em;
   }
 
-  .reset-button {
-    font-size: 12px;
-    width: 20ox;
-    
-  }
-
-  .timer {
-    height: 200px;
-  }
  
+    
+}
