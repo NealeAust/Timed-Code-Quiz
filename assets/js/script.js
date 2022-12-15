@@ -8,6 +8,7 @@ btn.addEventListener("click", function () {
 })
 
 function Questions() {
+for (let i = 0; i < allQuestions.length; i++) {
     console.log(allQuestions[0])
     console.log(allQuestions[0].question)
     var questionel = document.querySelector("h3")
@@ -17,28 +18,28 @@ function Questions() {
     button1.textContent = allQuestions[0].choices[0]
     button1.addEventListener("click", function () {
         //check if correct answer 
-        //Questions()
+        
     })
     var button2 = document.getElementById("choice2")
     button2.textContent = allQuestions[0].choices[1]
     button2.addEventListener("click", function () {
         //check if correct answer 
-        //Questions()
+        
     })
     var button3 = document.getElementById("choice3")
     button3.textContent = allQuestions[0].choices[2]
     button3.addEventListener("click", function () {
         //check if correct answer 
-        //Questions()
+        
     })
     var button4 = document.getElementById("choice4")
     button4.textContent = allQuestions[0].choices[3]
     button4.addEventListener("click", function () {
         //check if correct answer 
-       // Questions()
+      
     })
 }
-
+}
 var allQuestions = [{
     question: 'Commonly used data types DO NOT include:',
     choices: ['1. strings', '2. booleans', '3. alerts', '4. numbers'],
