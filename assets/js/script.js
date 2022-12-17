@@ -25,11 +25,8 @@ function Questions() {
     console.log(allQuestions[index].choices[0])
     var button1 = document.getElementById("choice1")
     button1.textContent = allQuestions[index].choices[0]
-    button1.addEventListener("click", choiceSelect) 
+    button1.addEventListener("click", choiceSelect); 
 
-    
-      
- 
  {   
     var button2 = document.getElementById("choice2")
     button2.textContent = allQuestions[index].choices[1]
@@ -81,35 +78,40 @@ var allQuestions = [{
 }];
 
 function choiceSelect(event) {
-    console.log(event.target.textContent);
-    console.log(allQuestions[index].correctAnswer);
-
+    console.log(event.target.textContent, "clicked choice");
+    console.log(allQuestions[index].correctAnswer, "Answer");
+    console.log (allQuestions[index].choices, "choices");
+    if("clicked choice"== "Answer"){
+        score++
+    }else{
+        console.log(allQuestions[index].incorrect,"incorrect");
+        incorrect()
+       
+    }
+    
     index++
     Questions()
 }
 
-
-
-
+function startTimer(){
     var sec = 100;
-    function startTimer(){
-        console.log('timer suppose to go')
+    
+        console.log("timer suppose to go")
         var timer = setInterval(function(){
             sec--;
-            document.getElementById('timerDisplay').innerHTML='00:'+sec;
+            document.getElementById("timerDisplay").innerHTML='00:'+sec;
             if (sec < 0) {
                 clearInterval(timer);
                 alert("Time is up!")
             }
         }, 1000);
 
-    }
+}
+            // function incorrect(){
+            // document.getElementById("incorrect").addEventListener('click', function() {
+            //  sec -= 15;
+            // document.getElementById("timerDisplay").innerHTML='00:'+sec;
+            //  };
+            // startTimer();
 
-    // function inCorrect(){
-    //     document.getElementById('incorrect').addEventListener('click', function() {
-    //         sec -= 15;
-    //         document.getElementById('timerDisplay').innerHTML='00:'+sec;
-    //         });
-    //         startTimer();
-
-    // }
+            // // }
