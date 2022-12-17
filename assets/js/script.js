@@ -1,18 +1,23 @@
+
+var score = 0;
+
+
 var btn = document.querySelector(".start-button")
 btn.addEventListener("click", function () {
     var header = document.querySelector("header")
     header.style.display = "none"
     var question = document.querySelector("#question")
     question.style.display = "block"
+    startTimer()     
     Questions()
-    startCountdown()
+    
 })
 
 
 var index = 0
 
 function Questions() {
-
+    
     console.log(allQuestions[index])
     console.log(allQuestions[index].question)
     var questionel = document.querySelector("h3")
@@ -21,21 +26,19 @@ function Questions() {
     var button1 = document.getElementById("choice1")
     button1.textContent = allQuestions[index].choices[0]
     button1.addEventListener("click", function () {
-        //check if correct answer 
+    // let varName = document.getElementById("id").value;
+    // if (buttonValue == allQuestions[index].correctAnswer){
+    //     score ++
+    // } else {
+    // // inCorrect()
+    // }  
        index++ 
        Questions()
     })
     var button2 = document.getElementById("choice2")
     button2.textContent = allQuestions[index].choices[1]
     button2.addEventListener("click", function () {
-    //     if(choices2 = allQuestions[index].correctAnswer){
-            // Increase score++
-
-    //     } else {
-        //    Deduct 15 seconds off clock   
-
-    //  }
-
+   
         
         index++ 
        Questions()
@@ -83,3 +86,26 @@ var allQuestions = [{
     correctAnswer: 4
 }];
 
+
+    var sec = 100;
+    function startTimer(){
+        console.log('timer suppose to go')
+        var timer = setInterval(function(){
+            sec--;
+            document.getElementById('timerDisplay').innerHTML='00:'+sec;
+            if (sec < 0) {
+                clearInterval(timer);
+                alert("Time is up!")
+            }
+        }, 1000);
+
+    }
+
+    // function inCorrect(){
+    //     document.getElementById('incorrect').addEventListener('click', function() {
+    //         sec -= 15;
+    //         document.getElementById('timerDisplay').innerHTML='00:'+sec;
+    //         });
+    //         startTimer();
+
+    // }
