@@ -25,39 +25,33 @@ function Questions() {
     console.log(allQuestions[index].choices[0])
     var button1 = document.getElementById("choice1")
     button1.textContent = allQuestions[index].choices[0]
-    button1.addEventListener("click", function () {
-    // let varName = document.getElementById("id").value;
-    // if (buttonValue == allQuestions[index].correctAnswer){
-    //     score ++
-    // } else {
-    // // inCorrect()
-    // }  
-       index++ 
-       Questions()
-    })
+    button1.addEventListener("click", choiceSelect) 
+
+    
+      
+ 
+ {   
     var button2 = document.getElementById("choice2")
     button2.textContent = allQuestions[index].choices[1]
-    button2.addEventListener("click", function () {
+    button2.addEventListener("click", choiceSelect)
    
+ }
         
-        index++ 
-       Questions()
-    })
+  {
     var button3 = document.getElementById("choice3")
     button3.textContent = allQuestions[index].choices[2]
-    button3.addEventListener("click", function () {
-        //check if correct answer 
-        index++
-        Questions()
-    })
-    var button4 = document.getElementById("choice4")
+    button3.addEventListener("click", choiceSelect)
+  }    
+
+  {
+  
+var button4 = document.getElementById("choice4")
     button4.textContent = allQuestions[index].choices[3]
-    button4.addEventListener("click", function () {
-        //check if correct answer 
-     index++ 
-     Questions()
-    })
-}
+    button4.addEventListener("click", choiceSelect)
+  }  
+}  
+ 
+
 
 
 var allQuestions = [{
@@ -85,6 +79,16 @@ var allQuestions = [{
     choices: ['1. JavaScript', '2. terminal/bash', '3. for loops', '4. console.log'],
     correctAnswer: 4
 }];
+
+function choiceSelect(event) {
+    console.log(event.target.textContent);
+    console.log(allQuestions[index].correctAnswer);
+
+    index++
+    Questions()
+}
+
+
 
 
     var sec = 100;
