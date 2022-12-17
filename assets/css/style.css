@@ -4,12 +4,27 @@
 
 body {
   font-family: Arial;
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  justify-content: flex-start;
-  background: white
+  /* max-width: 900px; */
+  /* justify-content: center; */
+  background: white;
+  align-items: center;
+}
+
+
+
+
+.choices:hover{
+  cursor:pointer;
+  background-color:#0026ff
+
+}
+
+.choices:active{
+  background-color: #ff0000;
 }
 
 #question{
@@ -39,7 +54,7 @@ header {
   text-align: center;
   background: white;
   color: black;
-  border-bottom:30px;
+  /* border-bottom:30px; */
 }
 
 main {
@@ -79,9 +94,6 @@ section {
   }
   
 
-
-
-
  .choices {
   background-color: #080839;
   color: white; 
@@ -89,16 +101,24 @@ section {
   cursor: pointer; 
   padding:5px 20px;
   width: 250px; 
-  max-height: 30px;
+  max-height: 50px;
   display: block; 
   font-size:16px;
- margin:20px;
+  margin:20px;
 } 
 
+#score{
+ color:black;
+ text-align: center;
+ font-size:2rem;
+ margin-bottom: 4rem;
+}
 
 
  
-  
+.quiz-repeat a:hover {
+background-color: #0026ff
+}
 
 
  .highscores {
