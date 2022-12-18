@@ -86,33 +86,25 @@ function choiceSelect(event) {
     if(event.target.textContent === allQuestions[index].correctAnswer){
         console.log(allQuestions[index].iscorrect,"correct");
         score++
+        index++
+        Questions()
+        
     }else{
         console.log(allQuestions[index].iscorrect,"incorrect");
-     
-       
-    }
-    
-    index++
-    Questions()
-    
-}
+        index++
+        Questions()
+    } 
 
-// function showIsCorrect(isCorrect) {
-//     var result = "Wrong";
-//     if (isCorrect) {
-//       result = "Correct";
-//     }
-//     $('#isCorrect').html(result);
-//   }
+}if(sec <=0 || allQuestions[index].question === allQuestions.length){
+     quizEndingFunction()       
+     }else{
+     Questions()    
+     }
 
 
-function Result(){
-var done = document.querySelector(".Results")
-
-}
 
 function startTimer(){
-    var sec = 100;
+    var sec = 60;
     
         console.log("timer suppose to go")
         var timer = setInterval(function(){
@@ -120,16 +112,16 @@ function startTimer(){
             document.getElementById("timerDisplay").innerHTML='00:'+sec;
             if (sec < 0) {
                 clearInterval(timer);
-                alert("Time is up!")
+                quizEndingFunction()
             }
         }, 1000);
 
 }
-            // function incorrect(){
-            // document.getElementById("incorrect").addEventListener('click', function() {
-            //  sec -= 15;
-            // document.getElementById("timerDisplay").innerHTML='00:'+sec;
-            //  };
-            // startTimer();
+            
+function quizEndingFunction(){
+    var question = document.querySelector("#question")
+    question.style.display = "none"
+    var results= document.querySelector("#results")
+    results.style.display = "text"
 
-            // // }
+}
