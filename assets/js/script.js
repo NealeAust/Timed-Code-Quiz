@@ -1,58 +1,5 @@
 
 var score = 0;
-
-
-var btn = document.querySelector(".start-button")
-btn.addEventListener("click", function () {
-    var header = document.querySelector("header")
-    header.style.display = "none"
-    var question = document.querySelector("#question")
-    question.style.display = "block"
-    startTimer()     
-    Questions()
-    
-})
-
-
-var index = 0
-
-function Questions() {
-    
-    console.log(allQuestions[index])
-    console.log(allQuestions[index].question)
-    var questionel = document.querySelector("h3")
-    questionel.textContent = allQuestions[index].question
-    console.log(allQuestions[index].choices[0])
-    var button1 = document.getElementById("choice1")
-    button1.textContent = allQuestions[index].choices[0]
-    button1.addEventListener("click", choiceSelect); 
- 
- {   
-    var button2 = document.getElementById("choice2")
-    button2.textContent = allQuestions[index].choices[1]
-    button2.addEventListener("click", choiceSelect)
-    
- }
-        
-  {
-    var button3 = document.getElementById("choice3")
-    button3.textContent = allQuestions[index].choices[2]
-    button3.addEventListener("click", choiceSelect)
- 
-  }    
-
-  {
-  
-var button4 = document.getElementById("choice4")
-    button4.textContent = allQuestions[index].choices[3]
-    button4.addEventListener("click", choiceSelect)
-   
-}  
-}  
- 
-
-
-
 var allQuestions = [{
     question: 'Commonly used data types DO NOT include:',
     choices: ['1. strings', '2. booleans', '3. alerts', '4. numbers'],
@@ -79,49 +26,99 @@ var allQuestions = [{
     correctAnswer: '4. console.log'
 }];
 
+
+var btn = document.querySelector(".start-button")
+btn.addEventListener("click", function () {
+    var header = document.querySelector("header")
+    header.style.display = "none"
+    var question = document.querySelector("#question")
+    question.style.display = "block"
+    startTimer()
+    Questions()
+
+})
+
+var index = 0
+
+function Questions() {
+    console.log(index)
+    console.log(allQuestions.length)
+    // console.log(allQuestions[index].question)
+    if (index === allQuestions.length) {
+        quizEndingFunction()
+
+    } else {
+
+        var questionel = document.querySelector("h3")
+        questionel.textContent = allQuestions[index].question
+        console.log(allQuestions[index].choices[0])
+
+        var button1 = document.getElementById("choice1")
+        button1.textContent = allQuestions[index].choices[0]
+        button1.addEventListener("click", choiceSelect);
+
+        var button2 = document.getElementById("choice2")
+        button2.textContent = allQuestions[index].choices[1]
+        button2.addEventListener("click", choiceSelect)
+
+        var button3 = document.getElementById("choice3")
+        button3.textContent = allQuestions[index].choices[2]
+        button3.addEventListener("click", choiceSelect)
+
+        var button4 = document.getElementById("choice4")
+        button4.textContent = allQuestions[index].choices[3]
+        button4.addEventListener("click", choiceSelect)
+    }
+}
 function choiceSelect(event) {
     console.log(event.target.textContent, "clicked choice");
     console.log(allQuestions[index].correctAnswer, "Answer");
-    console.log (allQuestions[index].choices, "choices");
-    if(event.target.textContent === allQuestions[index].correctAnswer){
-        console.log(allQuestions[index].iscorrect,"correct");
+    console.log(allQuestions[index].choices, "choices");
+
+    if (event.target.textContent === allQuestions[index].correctAnswer) {
+        console.log(allQuestions[index].iscorrect, "correct");
         score++
         index++
         Questions()
-        
-    }else{
-        console.log(allQuestions[index].iscorrect,"incorrect");
+
+    } else {
+        console.log(allQuestions[index].iscorrect, "incorrect");
         index++
         Questions()
-    } 
-
-}if(sec <=0 || allQuestions[index].question === allQuestions.length){
-     quizEndingFunction()       
-     }else{
-     Questions()    
-     }
-
-
-
-function startTimer(){
-    var sec = 60;
-    
-        console.log("timer suppose to go")
-        var timer = setInterval(function(){
-            sec--;
-            document.getElementById("timerDisplay").innerHTML='00:'+sec;
-            if (sec < 0) {
-                clearInterval(timer);
-                quizEndingFunction()
-            }
-        }, 1000);
+    }
 
 }
-            
-function quizEndingFunction(){
+
+function startTimer() {
+    var sec = 60;
+    console.log("timer suppose to go")
+    var timer = setInterval(function () {
+        sec--;
+        document.getElementById("timerDisplay").innerHTML = '00:' + sec;
+        if (sec <= 0) {
+            clearInterval(timer);
+            quizEndingFunction()
+        }
+    }, 1000);
+    }
+document.getElementById("incorrect").addEventListener('click', function() {
+    sec -=15;
+    document.getElementById("timerDisplay").innerHTML='00:'+sec;
+    startTimer();  
+});
+
+
+
+
+
+
+
+function quizEndingFunction() {
     var question = document.querySelector("#question")
     question.style.display = "none"
-    var results= document.querySelector("#results")
-    results.style.display = "text"
+    // var results= document.querySelector("#results")
+    // results.style.display = "text"
 
 }
+
+
