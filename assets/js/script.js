@@ -1,5 +1,9 @@
-
+var question = document.querySelector("#question")
+var results = document.querySelector("#results")
 var score = 0;
+var sec = 60;
+var index = 0;
+
 var allQuestions = [{
     question: 'Commonly used data types DO NOT include:',
     choices: ['1. strings', '2. booleans', '3. alerts', '4. numbers'],
@@ -16,7 +20,7 @@ var allQuestions = [{
     correctAnswer: '4. all of the above'
 },
 {
-    question: 'String values must be enclosed with _______  when being assigned to variables',
+    question: ['String values must be enclosed with _______  when  being assigned to variables'],
     choices: ['1. commas', '2. curly brackets', '3. quotes', '4. parenthesis'],
     correctAnswer: '3. quotes'
 },
@@ -28,24 +32,25 @@ var allQuestions = [{
 
 
 var btn = document.querySelector(".start-button")
+results.style.display = "none"
 btn.addEventListener("click", function () {
     var header = document.querySelector("header")
     header.style.display = "none"
-    var question = document.querySelector("#question")
     question.style.display = "block"
     startTimer()
     Questions()
 
 })
 
-var index = 0
+
 
 function Questions() {
     console.log(index)
     console.log(allQuestions.length)
-    // console.log(allQuestions[index].question)
+    
     if (index === allQuestions.length) {
         quizEndingFunction()
+    
 
     } else {
 
@@ -83,6 +88,7 @@ function choiceSelect(event) {
 
     } else {
         console.log(allQuestions[index].iscorrect, "incorrect");
+        sec-=15;
         index++
         Questions()
     }
@@ -90,35 +96,42 @@ function choiceSelect(event) {
 }
 
 function startTimer() {
-    var sec = 60;
+ 
     console.log("timer suppose to go")
     var timer = setInterval(function () {
         sec--;
         document.getElementById("timerDisplay").innerHTML = '00:' + sec;
         if (sec <= 0) {
+            document.getElementById("timerDisplay").innerHTML = '00:00';
             clearInterval(timer);
             quizEndingFunction()
         }
     }, 1000);
     }
-document.getElementById("incorrect").addEventListener('click', function() {
-    sec -=15;
-    document.getElementById("timerDisplay").innerHTML='00:'+sec;
-    startTimer();  
-});
-
-
-
-
 
 
 
 function quizEndingFunction() {
-    var question = document.querySelector("#question")
     question.style.display = "none"
-    // var results= document.querySelector("#results")
-    // results.style.display = "text"
+    highscores.style.display = "none"
+    results.style.display = "block"
+   
+    var finalScore = document.getElementById("finResults")
+    finalScore.textContent= 'Your final score is: '+ score;
+    console.log(finalScore)
+    submit.addEventListener("click", function(){
+    
+    
+    var initialEL = document.getElementById("text-box");
+    console.log(initialEL.value)
+    console.log("This is score: ", score)
+    results.style.display = "none"
+    highscores.style.display = "block"
+    
+   }
+   
 
+   )
 }
 
 
