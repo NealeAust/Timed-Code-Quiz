@@ -9,74 +9,76 @@
 
 <body>
   <header>
-    <div class ="container">
-      <div class ="quiz-box"
-      <div id = "quiz">
-    <div class="Heading">
-      <h1>Coding Quiz Challenge</h1>
-    
-      <p> Try to answer the following code-related questions within the time limit.<br>
-      Keep in mind that incorrect answers will penalize your score/time by 15 seconds<p>
-      <button class="start-button">Start Quiz</button>
-   
+    <div class="container">
+      <div class="quiz-box">
+        <div id="quiz">
+          <div class="Heading">
+            <h1>Coding Quiz Challenge</h1>
+
+            <p> Try to answer the following code-related questions within the time limit.<br>
+              Keep in mind that incorrect answers will penalize your score/time by 15 seconds
+            <p>
+              <button class="start-button">Start Quiz</button>
+
   </header>
 
   <main>
-   <section>
- 
-    <div id = "viewTimer" >
-      <h5>View Time Remaining:</h5>
+    <section>
+
+      <div id="viewTimer">
+        <h5>View Time Remaining:</h5>
       </div>
-    <div id = "timerDisplay"></div>
-    <div id = "incorrect"></div> 
+      <div id="timerDisplay"></div>
+      <div id="incorrect"></div>
 
 
     </section>
-    
-   <section>
+
+    <section>
       <div class="viewHighscores">
         <h5>View Highscores</h5>
       </div>
-  
+
     </section>
 
     <section id="question">
       <h3></h3>
-      <button class="choices" value = 1 id="choice1"></button>
-      <button class="choices" value = 2 id="choice2"></button>
-      <button class="choices" value = 3 id="choice3"></button>
-      <button class="choices" value = 4 id="choice4"></button>
+      <button class="choices" value=1 id="choice1"></button>
+      <button class="choices" value=2 id="choice2"></button>
+      <button class="choices" value=3 id="choice3"></button>
+      <button class="choices" value=4 id="choice4"></button>
     </section>
-    <div id = "incorrect"></div>
-    
+    <div id="incorrect"></div>
+
     <h6></h6>
     <section>
-    <div id = "results">
-        <h1>All done!</h1> 
-        <h3 id = "finResults"> Your final score is</h3>
-                
-        <div class= "initials" </div>
-        <h3>Enter Initials:</h3>
-          <input id = "text-box"/> 
+      <div id="results">
+        <h1>All done!</h1>
+        <h3 id="finResults"> Your final score is</h3>
+
+        <div class="initials" ></div>
+          <h3>Enter Initials:</h3>
+          <input id="text-box" />
           <button id="submit">Submit</button>
         </div>
-        
-       
-       
-        <div id ="highscores">
-          <h1>High scores</h1> 
-                      
-           <div id = "textbox-HS"></div>
+
+
+
+        <div id="highscores">
+          <h1>High scores</h1>
+          <div id="textbox-HS" ></div>
             <button id="goBack">Go back</button>
             <button id="clearHighscores">Clear high scores</button>
-          </div> 
-        </section>
-      
-      
-      </main>
+          </div>
+
+    </section>
+
+
+  </main>
   <script src="./assets/js/script.js"></script>
 </body>
-<footer> 
-  <p>Write or Wrong</p>
+<footer>
+  <p></p>
 </footer>
+
 </html>

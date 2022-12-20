@@ -1,8 +1,18 @@
 var question = document.querySelector("#question")
 var results = document.querySelector("#results")
 var score = 0;
-var sec = 60;
+var sec = 100;
 var index = 0;
+var highscores = document.querySelector("#highscores")
+highscores.style.display = "none"
+var timer = setInterval(function () {
+    sec--;
+    document.getElementById("timerDisplay").innerHTML = '00:' + sec;
+    if (sec <= 0) {
+        clearInterval(timer);
+        quizEndingFunction()
+    }
+}, 1000);
 
 var allQuestions = [{
     question: 'Commonly used data types DO NOT include:',
@@ -37,20 +47,21 @@ btn.addEventListener("click", function () {
     var header = document.querySelector("header")
     header.style.display = "none"
     question.style.display = "block"
-    startTimer()
     Questions()
-
+    
 })
 
 
 
 function Questions() {
+    
     console.log(index)
     console.log(allQuestions.length)
-    
+
     if (index === allQuestions.length) {
-        quizEndingFunction()
-    
+     stopClock()
+     quizEndingFunction()
+
 
     } else {
 
@@ -88,7 +99,8 @@ function choiceSelect(event) {
 
     } else {
         console.log(allQuestions[index].iscorrect, "incorrect");
-        sec-=15;
+        sec -= 15;
+              
         index++
         Questions()
     }
@@ -96,42 +108,43 @@ function choiceSelect(event) {
 }
 
 function startTimer() {
- 
+    
     console.log("timer suppose to go")
-    var timer = setInterval(function () {
-        sec--;
-        document.getElementById("timerDisplay").innerHTML = '00:' + sec;
-        if (sec <= 0) {
-            document.getElementById("timerDisplay").innerHTML = '00:00';
-            clearInterval(timer);
-            quizEndingFunction()
-        }
-    }, 1000);
-    }
-
-
-
-function quizEndingFunction() {
-    question.style.display = "none"
-    highscores.style.display = "none"
-    results.style.display = "block"
-   
-    var finalScore = document.getElementById("finResults")
-    finalScore.textContent= 'Your final score is: '+ score;
-    console.log(finalScore)
-    submit.addEventListener("click", function(){
-    
-    
-    var initialEL = document.getElementById("text-box");
-    console.log(initialEL.value)
-    console.log("This is score: ", score)
-    results.style.display = "none"
-    highscores.style.display = "block"
-    
-   }
-   
-
-   )
+    timer
+}
+function stopClock(){
+    clearInterval(timer);
 }
 
 
+function quizEndingFunction() {
+    stopClock()
+    question.style.display = "none"
+    results.style.display = "block"
+
+    var finalScore = document.getElementById("finResults")
+    finalScore.textContent = 'Your final score is: ' + score;
+    console.log(finalScore)
+    submit.addEventListener("click", function () {
+
+
+
+        var initialEL = document.getElementById("text-box");
+        console.log(initialEL.value)
+        console.log("This is score: ", score)
+        results.style.display = "none"
+        highscores.style.display = "block"
+        // localStorage.setItem("initial", score);
+        
+        let items = localStorage.length;
+        console.log("Total number of items is ", items);
+        
+        
+    }
+
+
+    )
+
+
+
+}
