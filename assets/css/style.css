@@ -110,6 +110,12 @@ section {
   border-radius: 8px;
 } 
 
+#iscorrect{
+
+color:red;
+
+}
+
 .choices:hover{
   cursor:pointer;
   background-color:#0026ff
@@ -118,6 +124,7 @@ section {
 
 .choices:active{
   background-color: #ff0000;
+  position:absolute;
 }
 
 .initials {

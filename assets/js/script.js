@@ -1,19 +1,11 @@
 var question = document.querySelector("#question")
 var results = document.querySelector("#results")
 var score = 0;
-var sec = 100;
+var sec = 60;
 var index = 0;
 var highscores = document.querySelector("#highscores")
 highscores.style.display = "none"
-var timer = setInterval(function () {
-    sec--;
-    document.getElementById("timerDisplay").innerHTML = '00:' + sec;
-    if (sec <= 0) {
-        clearInterval(timer);
-        quizEndingFunction()
-    }
-}, 1000);
-
+var timer;
 var allQuestions = [{
     question: 'Commonly used data types DO NOT include:',
     choices: ['1. strings', '2. booleans', '3. alerts', '4. numbers'],
@@ -48,19 +40,26 @@ btn.addEventListener("click", function () {
     header.style.display = "none"
     question.style.display = "block"
     Questions()
-    
+
+    timer = setInterval(function () {
+        sec--;
+        document.getElementById("timerDisplay").innerHTML = '00:' + sec;
+        if (sec <= 0) {
+            clearInterval(timer);
+
+            quizEndingFunction()
+        }
+    }, 1000);
 })
 
-
-
 function Questions() {
-    
+
     console.log(index)
     console.log(allQuestions.length)
 
     if (index === allQuestions.length) {
-     stopClock()
-     quizEndingFunction()
+        stopClock()
+        quizEndingFunction()
 
 
     } else {
@@ -93,6 +92,7 @@ function choiceSelect(event) {
 
     if (event.target.textContent === allQuestions[index].correctAnswer) {
         console.log(allQuestions[index].iscorrect, "correct");
+        iscorrect.textContent = "Correct!";
         score++
         index++
         Questions()
@@ -100,7 +100,7 @@ function choiceSelect(event) {
     } else {
         console.log(allQuestions[index].iscorrect, "incorrect");
         sec -= 15;
-              
+        iscorrect.textContent = "Incorrect";
         index++
         Questions()
     }
@@ -108,11 +108,11 @@ function choiceSelect(event) {
 }
 
 function startTimer() {
-    
+
     console.log("timer suppose to go")
     timer
 }
-function stopClock(){
+function stopClock() {
     clearInterval(timer);
 }
 
@@ -135,11 +135,11 @@ function quizEndingFunction() {
         results.style.display = "none"
         highscores.style.display = "block"
         // localStorage.setItem("initial", score);
-        
+
         let items = localStorage.length;
         console.log("Total number of items is ", items);
-        
-        
+
+
     }
 
 
