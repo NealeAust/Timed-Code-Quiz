@@ -6,6 +6,7 @@ var index = 0;
 var highscores = document.querySelector("#highscores")
 highscores.style.display = "none"
 var timer;
+var btn;
 var allQuestions = [{
     question: 'Commonly used data types DO NOT include:',
     choices: ['1. strings', '2. booleans', '3. alerts', '4. numbers'],
@@ -91,20 +92,19 @@ function choiceSelect(event) {
     console.log(allQuestions[index].choices, "choices");
 
     if (event.target.textContent === allQuestions[index].correctAnswer) {
-        console.log(allQuestions[index].iscorrect, "correct");
-        iscorrect.textContent = "Correct!";
+        console.log(allQuestions[index].isCorrect, "correct");
+        isCorrect.textContent = "Correct!";
         score++
         index++
         Questions()
 
     } else {
-        console.log(allQuestions[index].iscorrect, "incorrect");
+        console.log(allQuestions[index].isCorrect, "incorrect");
         sec -= 15;
-        iscorrect.textContent = "Incorrect";
+        isCorrect.textContent = "Incorrect!";
         index++
         Questions()
     }
-
 }
 
 function startTimer() {
@@ -126,24 +126,26 @@ function quizEndingFunction() {
     finalScore.textContent = 'Your final score is: ' + score;
     console.log(finalScore)
     submit.addEventListener("click", function () {
-
-
+     isCorrect.style.display='none'   
+     
 
         var initialEL = document.getElementById("text-box");
         console.log(initialEL.value)
         console.log("This is score: ", score)
         results.style.display = "none"
         highscores.style.display = "block"
-        // localStorage.setItem("initial", score);
+        goBack.addEventListener("click", function(){
+        highscores.style.display = "none" 
+        header.style.display = "block"
+        btn
 
-        let items = localStorage.length;
-        console.log("Total number of items is ", items);
+    })
 
 
-    }
+        
 
 
-    )
+    })
 
 
 
