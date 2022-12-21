@@ -126,23 +126,21 @@ function quizEndingFunction() {
     finalScore.textContent = 'Your final score is: ' + score;
     console.log(finalScore)
     submit.addEventListener("click", function () {
-     isCorrect.style.display='none'   
+    isCorrect.style.display='none'   
      
 
         var initialEL = document.getElementById("text-box");
         console.log(initialEL.value)
         console.log("This is score: ", score)
         results.style.display = "none"
-        highscores.style.display = "block"
+        highscores.style.display = "block"                
         goBack.addEventListener("click", function(){
         highscores.style.display = "none" 
         header.style.display = "block"
         btn
 
     })
-
-
-        
+      
 
 
     })
