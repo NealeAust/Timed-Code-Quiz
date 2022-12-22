@@ -1,4 +1,4 @@
- Timed-Code-Quiz
+ # Timed-Code-Quiz
 
 ## Project Title
 
