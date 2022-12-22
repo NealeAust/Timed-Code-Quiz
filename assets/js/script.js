@@ -46,7 +46,6 @@ btn.addEventListener("click", function () {
     question.style.display = "block"
     Questions()
 
-
     // timer countown starts and displayed
     // Seconds left checked and quiz stopped at zero or go to next question.
     // Must answer all before seconds = 0 or return to front page
@@ -74,7 +73,6 @@ function Questions() {
         quizEndingFunction()
 
     } else {
-
 
         var questionel = document.querySelector("h3")
         questionel.textContent = allQuestions[index].question
@@ -139,7 +137,6 @@ function quizEndingFunction() {
     var finalScore = document.getElementById("finResults")
     finalScore.textContent = 'Your final score is: ' + score;
     console.log(finalScore)
-
 
     // User enters their initials and submits result of quiz
     var initialEL = document.getElementById("textBox");
