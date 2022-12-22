@@ -77,7 +77,7 @@ Link:
 
 Home page:
 
-![image](https://user-images.githubusercontent.com/115671306/209068780-d22bee82-eba1-4bf7-a2a3-bf999d021662.png)
+![image](https://user-images.githubusercontent.com/115671306/209070501-5e2c8569-ebbf-4918-987b-2919a19d3443.png)
 
 First question with possible answers:
 
