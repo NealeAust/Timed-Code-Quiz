@@ -1,4 +1,4 @@
-// Declared most variables as global, accessed by >1 function
+// console.log(initialEL.value)
 var question = document.querySelector("#question")
 var results = document.querySelector("#results")
 var score = 0;
@@ -151,7 +151,11 @@ function quizEndingFunction() {
         highScores.style.display = "block"
         document.getElementById("textBoxHscore").innerHTML = (initialEL.value + ":" + score)
 
+        // Save into local storage
+        localStorage.setItem('Initial', initialEL.value);
+        localStorage.setItem( 'score', score);
 
+        console.log(localStorage)
         goBack.addEventListener("click", function () {
             highScores.style.display = "none"
             location.reload();
