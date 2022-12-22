@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<!--Container for mandatory information/values/standards about webpage required for it to run -->
 
 <head>
   <meta charset="UTF-8" />
@@ -8,77 +9,73 @@
 </head>
 
 <body>
+  <!-- The front opening page of quiz, needed to start the quiz -->
   <header>
-    <div class="container">
-      <div class="quiz-box">
-        <div id="quiz">
-          <div class="Heading">
-            <h1>Coding Quiz Challenge</h1>
+    <section class="container"></section>
+    <section class="Heading">
+      <h1>Coding Quiz Challenge</h1>
 
-            <p> Try to answer the following code-related questions within the time limit.<br>
-              Keep in mind that incorrect answers will penalize your score/time by 15 seconds
-            <p>
-              <button class="start-button">Start Quiz</button>
+      <p> Try to answer the following code-related questions within the time limit.<br>
+        Keep in mind that incorrect answers will penalize your score/time by 15 seconds
+      <p>
+        <!-- click to start quiz, intiate timer -->
+        <button class="start-button">Start Quiz</button>
+    </section>
 
   </header>
 
   <main>
+    <!-- Timed quiz with seconds remaining displayed -->
     <section>
-
       <div id="viewTimer">
         <h5>View Time Remaining:</h5>
       </div>
       <div id="timerDisplay"></div>
-      <!-- <div id="incorrect"></div> -->
-
-
     </section>
 
     <section>
       <div class="viewHighscores">
         <h5>View Highscores</h5>
       </div>
-
     </section>
 
+    <!-- Used to retrieve question from array and display  -->
     <section id="question">
       <h3></h3>
+      <!-- Buttons with an option answer on each, user clicks their choice  -->
       <button class="choices" value=1 id="choice1"></button>
       <button class="choices" value=2 id="choice2"></button>
       <button class="choices" value=3 id="choice3"></button>
       <button class="choices" value=4 id="choice4"></button>
     </section>
-   
-    <h2 id="isCorrect" ></h2>
-   
-    <section>
-      <div id="results">
-        <h1>All done!</h1>
-        <h3 id="finResults"> Your final score is</h3>
 
-        <div class="initials" ></div>
-          <h3>Enter Initials:</h3>
-          <input id="text-box" />
-          <button id="submit">Submit</button>
-        </div>
+    <!-- Mostly ID used by Javascript  to interact and to perate quiz-->
+    <!-- Used at the end of quiz to cllate score & enter user's initial -->
+    <div>
+      <h2 id="isCorrect"></h2>
+    </div>
 
-
-
-        <div id="highscores">
-          <h3>High scores</h3>
-          <div id="textbox-HS" ></div>
-            <button id="goBack">Go back</button>
-            <button id="clearHighscores">Clear high scores</button>
-          </div>
-
+    <section id="results">
+      <h1>All done!</h1>
+      <h3 id="finResults"> Your final score is</h3>
+      <div class="initials"></div>
+      <h3>Enter Initials:</h3>
+      <input id="textBox" />
+      <button id="submit">Submit</button>
     </section>
 
+    <section id="highScores">
+      <h3>High scores</h3>
+      <h2 id="textBoxHscore"></h2>
+      <!-- Like refresh, navigates to front page for user or other to play -->
+      <button id="goBack">Go back</button>
+      <button id="clearHighscores">Clear high scores</button>
+    </section>
 
   </main>
   <script src="./assets/js/script.js"></script>
+  <footer>
+  </footer>
 </body>
-<footer>
-  <p></p>
-</footer>
 
 </html>

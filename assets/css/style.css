@@ -1,37 +1,52 @@
+
+/* Universal selector */
 * {
-
   box-sizing: border-box;
-
-  
 }
 
-
+/* Type selector */
 body {
   display: flex;
   flex-direction: column;
-  margin:auto;;
+  margin: auto;
   align-items: center;
   justify-content: center;
   font-family: Arial;
-    }
+}
 
-header p{
+header {
+  justify-content: center;
+  padding: 50px;
+  text-align: center;
+  background: white;
+  color: black;
+}
 
+section {
+  flex: 0 auto;
+  padding: 8px;
+  margin-top: 5px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+header p {
   font-size: 18px;
-  font-weight:400;
-letter-spacing:1.3px ;
+  font-weight: 400;
+  letter-spacing: 1.3px;
 }
 
-
-
-#question{
-display:none;
-width: 600px;
-flex-wrap: wrap;
+main {
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
+/* Class selector */
+/* Button changes color on hover & click */
 
 .start-button {
-  background-color:#080839 ;
+  background-color: #080839;
   border-radius: 8px;
   color: white;
   cursor: pointer;
@@ -41,38 +56,23 @@ flex-wrap: wrap;
   max-width: 255px;
   padding: 20px 52px;
   text-align: center;
-  
   margin-top: 0.6em;
 }
 
-header {
-  justify-content:center;
-  padding: 50px;
-  text-align: center;
-  background: white;
-  color: black;
-  }
-
-main {
-  
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-
+.start-button:hover {
+  cursor: pointer;
+  background-color: #0026ff
 }
 
-section {
-  flex: 0 auto;                            
-  padding: 8px;
-  margin-top: 5px;
-  background-color: white;
-  border-radius: 8px;
+.start-button:active {
+  background-color: #ff0000;
 }
 
-#viewTimer{
-  position:absolute;
-  top:5px;
-  right:130px;
+/* Mostly ID selectors - have # in front name*/
+#viewTimer {
+  position: absolute;
+  top: 5px;
+  right: 130px;
   height: 2px;
   padding: 5px;
   color: black;
@@ -80,224 +80,194 @@ section {
   font-size: 20px;
 }
 
-
-#timerDisplay{
-  position:absolute;
-  top:15px;
-  right:30px;
+#timerDisplay {
+  position: absolute;
+  top: 15px;
+  right: 30px;
   height: 2px;
   padding: 14px;
   /* color: black; */
   text-align: center;
   font-size: 30px;
-  color:red
+  color: red
 }
 
+/* class selector */
+.viewHighscores {
+  position: absolute;
+  top: 12px;
+  left: 100px;
+  height: 5px;
+  padding: 0px;
+  background: white;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+}
 
-  
+/* Questions wrap to next line when width reached */
+#question {
+  display: none;
+  width: 600px;
+  flex-wrap: wrap;
+}
 
- .choices {
-  background-color: #1818e0;;
-  color: white; 
-  text-align:left;
-  cursor: pointer; 
-  padding:5px 20px;
-  width: 250px; 
+/* Button changes color on hover & click */
+/* User friendliness, user knows on chosen button & when clicked */
+.choices {
+  background-color: #1818e0;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  padding: 5px 20px;
+  width: 250px;
   max-height: 50px;
-  display: block; 
-  font-size:16px;
-  margin:20px;
+  display: block;
+  font-size: 16px;
+  margin: 20px;
   border-radius: 8px;
-} 
+}
 
-#isCorrect{
+.choices:hover {
+  cursor: pointer;
+  background-color: #0026ff
+}
 
-color:#0026ff;
-animation: animate 1.5s linear infinite;
+.choices:active {
+  background-color: #ff0000;
+}
 
+/* Added animation to be noticed but not too prominant */
+#isCorrect {
+  color: #0026ff;
+  animation: animate 1.5s linear infinite;
 
 }
-@keyframes animate{
-  0%{
+
+@keyframes animate {
+  0% {
     opacity: 0;
   }
-  50%{
+
+  50% {
     opacity: 0.7;
   }
-  100%{
+
+  100% {
     opacity: 0;
   }
 }
-
-
-
-
-
-
-
-.choices:hover{
-  cursor:pointer;
-  background-color:#0026ff
-
-}
-
-.choices:active{
-  background-color: #ff0000;
-
-}
-
+/* Input - entered by user */
 .initials {
-display: block;
+  display: block;
 
 }
 
-
-
-#text-box{
-/* justify-content:center; */
-margin:10px 10px 10px 5px; 
-padding-left:3px;
-background-color: white;
-height:40px;
-width:30vh;
-border:3px solid #3e8ec0;
-border-radius: 2px;
-font-size: 20px;
+#textBox {
+  margin: 10px 10px 10px 5px;
+  padding-left: 3px;
+  background-color: white;
+  height: 40px;
+  width: 30vh;
+  border: 3px solid #3e8ec0;
+  border-radius: 2px;
+  font-size: 20px;
 }
 
-#submit{
-    
+#submit {
   background-color: #080839;
   color: white;
-   align-items: center; 
+  align-items: center;
   text-justify: center;
-      text-align: center;
-      cursor: pointer;
-      width: 90px;
-      max-height: 40px;
-      font-size: 16px;
-      padding: 5px;
-      border-radius: 8px;
-      
-      /* text-justify: center; */
+  text-align: center;
+  cursor: pointer;
+  width: 90px;
+  max-height: 40px;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 8px;
 }
 
-#submit:hover{
-  cursor:pointer;
-  background-color:#0026ff
-
+/* Button changes color on hover & click */
+#submit:hover {
+  cursor: pointer;
+  background-color: #0026ff
 }
 
-#submit:active{
+#submit:active {
   background-color: #ff0000;
 }
 
-#textbox-HS{
-  justify-content:center;
-  /* margin:5px 5px 5px 5px;  */
-  padding-left:3px;
+#textBoxHscore {
+  justify-content: left;
+  align-items: center;
+  padding: 5px;
   background-color: #f1daf6;
-  height:40px;
-  width:60vh;
-  display:flex;
-
+  height: 40px;
+  width: 60vh;
+  display: flex;
   border-radius: 2px;
 }
 
-#goBack{
-    
+/* Refresh, reloads Web application at front page */
+#goBack {
   background-color: #080839;
   color: white;
-    text-justify: center;
-      text-align: center;
-      cursor: pointer;
-      width: 90px;
-      height: 40px;
-      /* display: flex;  */
-      font-size: 16px;
-      margin-top: 10px;
-      padding: 5px;
-      border-radius: 8px;
-      text-justify: center;
+  text-justify: center;
+  text-align: center;
+  cursor: pointer;
+  width: 90px;
+  height: 40px;
+  /* display: flex;  */
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 8px;
+  text-justify: center;
 }
 
-#goBack:hover{
-  cursor:pointer;
-  background-color:#0026ff
-
+#goBack:hover {
+  cursor: pointer;
+  background-color: #0026ff
 }
 
-#goBack:active{
+#goBack:active {
   background-color: #ff0000;
 }
 
-#clearHighscores{
-    
+#clearHighscores {
   background-color: #080839;
   color: white;
-    text-justify: center;
-      text-align: center;
-      cursor: pointer;
-      width: 200px;
-      height: 40px;
-      /* display: flex;  */
-      font-size: 16px;
-      margin-top: 10px;
-      padding: 2px;
-      border-radius: 8px;
-      text-justify: center;
-      
+  text-justify: center;
+  text-align: center;
+  cursor: pointer;
+  width: 200px;
+  height: 40px;
+  /* display: flex;  */
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 2px;
+  border-radius: 8px;
+  text-justify: center;
 }
 
-
-#clearHighscores:hover{
-  cursor:pointer;
-  background-color:#0026ff
-
+#clearHighscores:hover {
+  cursor: pointer;
+  background-color: #0026ff
 }
 
-#clearHighscores:active{
+#clearHighscores:active {
   background-color: #ff0000;
-
 }
-
-
-#score{
- color:black;
- text-align: center;
- font-size:2rem;
- margin-bottom: 4rem;
-}
-
-
- 
-.quiz-repeat a:hover {
-background-color: #0026ff
-}
-
-
- .viewHighscores {
-position:absolute;
-top:12px;
-left:100px;
-height: 5px;
-padding: 0px;
-background: white;
-color: black;
-text-align: center;
-font-size:20px;
-}
-
-
+/* Allows flex */
 @media screen and (max-width: 1183px) {
   main {
     flex-direction: column;
   }
 
-  
   section {
     background-color: white;
-    margin: 20px auto;
+    margin: 5px auto;
     width: 92vw;
   }
 }
@@ -307,6 +277,4 @@ font-size:20px;
     font-size: 2em;
   }
 
- 
-    
 }

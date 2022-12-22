@@ -1,16 +1,20 @@
+// Declared most variables as global, accessed by >1 function
 var question = document.querySelector("#question")
 var results = document.querySelector("#results")
 var score = 0;
-var sec = 60;
+var sec = 75;
 var index = 0;
-var highscores = document.querySelector("#highscores")
-highscores.style.display = "none"
+var highScores = document.querySelector("#highScores")
+highScores.style.display = "none"
 var timer;
 var btn;
+
+// Array object to store quiz questions,choices for user to choose and answer
+// Correct info & layout critical to success as accessed by functions below 
 var allQuestions = [{
     question: 'Commonly used data types DO NOT include:',
     choices: ['1. strings', '2. booleans', '3. alerts', '4. numbers'],
-    correctAnswer: '3. alerts'
+    correctAnswer: '3. alerts'// Note correct answer has contains value not just  
 },
 {
     question: 'The condition in an if / else statement is enclosed with _______.',
@@ -33,7 +37,7 @@ var allQuestions = [{
     correctAnswer: '4. console.log'
 }];
 
-
+// Start quiz - navigate to first question 
 var btn = document.querySelector(".start-button")
 results.style.display = "none"
 btn.addEventListener("click", function () {
@@ -42,28 +46,35 @@ btn.addEventListener("click", function () {
     question.style.display = "block"
     Questions()
 
+
+    // timer countown starts and displayed
+    // Seconds left checked and quiz stopped at zero or go to next question.
+    // Must answer all before seconds = 0 or return to front page
     timer = setInterval(function () {
         sec--;
         document.getElementById("timerDisplay").innerHTML = '00:' + sec;
         if (sec <= 0) {
             clearInterval(timer);
-
             quizEndingFunction()
         }
     }, 1000);
 })
 
+//Run the quiz, loops through questions index 0-4, choice based on button pressed
 function Questions() {
 
     console.log(index)
     console.log(allQuestions.length)
 
+    // After each answer selected checks if last question
+    // If last question stops clock, quiz completed OR
+    // will display next question
     if (index === allQuestions.length) {
         stopClock()
         quizEndingFunction()
 
-
     } else {
+
 
         var questionel = document.querySelector("h3")
         questionel.textContent = allQuestions[index].question
@@ -86,6 +97,9 @@ function Questions() {
         button4.addEventListener("click", choiceSelect)
     }
 }
+// Conditional operator to check answer and displays whether correct or incorrect 
+// Score increased by 1 if correct
+// Note time left instantly reduced by 15 seconds if answer incorrect
 function choiceSelect(event) {
     console.log(event.target.textContent, "clicked choice");
     console.log(allQuestions[index].correctAnswer, "Answer");
@@ -107,6 +121,7 @@ function choiceSelect(event) {
     }
 }
 
+// startTimer() called at 1st question & stopClock() after last question choice entered
 function startTimer() {
 
     console.log("timer suppose to go")
@@ -116,35 +131,31 @@ function stopClock() {
     clearInterval(timer);
 }
 
-
+// Quiz completed, stop timer and calculate & display score
 function quizEndingFunction() {
     stopClock()
     question.style.display = "none"
     results.style.display = "block"
-
     var finalScore = document.getElementById("finResults")
     finalScore.textContent = 'Your final score is: ' + score;
     console.log(finalScore)
+
+
+    // User enters their initials and submits result of quiz
+    var initialEL = document.getElementById("textBox");
+    console.log(initialEL.value)
+    console.log("This is score: ", score)
     submit.addEventListener("click", function () {
-    isCorrect.style.display='none'   
-     
-
-        var initialEL = document.getElementById("text-box");
-        console.log(initialEL.value)
-        console.log("This is score: ", score)
+        isCorrect.style.display = 'none'
         results.style.display = "none"
-        highscores.style.display = "block"                
-        goBack.addEventListener("click", function(){
-        highscores.style.display = "none" 
-        header.style.display = "block"
-        btn
+        highScores.style.display = "block"
+        document.getElementById("textBoxHscore").innerHTML = (initialEL.value + ":" + score)
 
+
+        goBack.addEventListener("click", function () {
+            highScores.style.display = "none"
+            location.reload();
+
+        })
     })
-      
-
-
-    })
-
-
-
 }
