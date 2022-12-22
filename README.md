@@ -79,9 +79,11 @@ Home page:
 
 ![image](https://user-images.githubusercontent.com/115671306/209070501-5e2c8569-ebbf-4918-987b-2919a19d3443.png)
 
+
+
 First question with possible answers:
 
-![image](https://user-images.githubusercontent.com/115671306/209069186-e810b764-6b76-435a-b7e5-fbdde136be89.png)
+![image](https://user-images.githubusercontent.com/115671306/209071076-740c6dc3-beb6-4600-871d-e5a297bbe4b1.png)
 
 
 
