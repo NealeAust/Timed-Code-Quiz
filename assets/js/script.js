@@ -7,7 +7,11 @@ var index = 0;
 var highScores = document.querySelector("#highScores")
 highScores.style.display = "none"
 var timer;
-var btn;
+var listOfHighScores = JSON.parse(localStorage.getItem("listscores"))
+
+if (listOfHighScores === null) {
+    listOfHighScores = [];
+}
 
 // Array object to store quiz questions,choices for user to choose and answer
 // Correct info & layout critical to success as accessed by functions below 
@@ -146,16 +150,28 @@ function quizEndingFunction() {
         isCorrect.style.display = 'none'
         results.style.display = "none"
         highScores.style.display = "block"
-        document.getElementById("textBoxHscore").innerHTML = (initialEL.value + ":" + score)
 
-        // Save into local storage
-        localStorage.setItem('Initial', initialEL.value);
-        localStorage.setItem( 'score', score);
+        var userinfo = {
+            initials: initialEL.value,
+            userScore: score
+        }
+        listOfHighScores.push(userinfo)
+        localStorage.setItem("listscores", JSON.stringify(listOfHighScores))
+        for (var i = 0; i < listOfHighScores.length; i++) {
+            var h5tag = document.createElement('h5')
+            h5tag.textContent = listOfHighScores[i].initials + listOfHighScores[i].userScore + ",   "
+            document.getElementById("textBoxHscore").appendChild(h5tag)
+
+        }
 
         console.log(localStorage)
         goBack.addEventListener("click", function () {
             highScores.style.display = "none"
             location.reload();
+
+            clearHighscores.addEventListener("click", function () {
+                localStorage.clear();
+            })
 
         })
     })
